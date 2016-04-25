@@ -1,6 +1,10 @@
 FROM ubuntu 
 MAINTAINER qw4wer "qw5wer@gmail.com"
 
+ARG jdk_version=8u73 
+ARG	jdk_b=02 
+ARG	jdk_url=http://download.oracle.com/otn-pub/java/jdk/$jdk_version-b$jdk_b/jdk-$jdk_version-linux-x64.tar.gz
+
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe"> /etc/apt/sources.list  && \
 	apt-get update  && apt-get -y --no-install-recommends install wget && rm -rf /var/lib/apt/lists/*
   
