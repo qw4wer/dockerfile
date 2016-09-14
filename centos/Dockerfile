@@ -13,6 +13,8 @@ RUN echo "nameserver 114.114.114.114" > /etc/resolv.conf && mkdir -p /opt/busybo
 
 RUN cd /opt/busybox && make defconfig && make install
 
-RUN cd ./_install/ && busybox --install
+#RUN ls /opt/busybox/_install/bin
+
+RUN cd /opt/busybox/_install/bin && ./busybox --install
 
 
