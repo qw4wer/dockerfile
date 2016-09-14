@@ -9,7 +9,7 @@ RUN  yum install -y install wget make gcc perl glibc-static ncurses-devel libgcr
 
 
 #创建目录并下载解压jdk
-RUN mkdir -p /opt/busybox && wget -q  --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" $busybox -O - | tar -xz --strip-components=1 -C /opt/busybox
+RUN mkdir -p /opt/busybox && wget -q  --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" $busybox -O - | tar -jxvf --strip-components=1 -C /opt/busybox
 
 RUN cd /opt/busybox && make defconfig && make install
 
