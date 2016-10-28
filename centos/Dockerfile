@@ -17,4 +17,5 @@ RUN cd /opt/busybox && make defconfig && make install
 
 RUN cd /opt/busybox/_install/bin && ./busybox --install
 
+RUN yum clean all && rm -rf /opt/busybox
 
