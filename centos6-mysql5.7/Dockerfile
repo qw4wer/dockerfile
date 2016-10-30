@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:centos6
 MAINTAINER qw4wer "qw5wer@gmail.com"
 
 WORKDIR /tmp
