@@ -8,8 +8,10 @@ RUN yum -y install wget && wget http://dev.mysql.com/get/mysql57-community-relea
 	yum -y install mysql-community-server && \
 	yum clean all
 
-ENTRYPOINT ["/etc/init.d/mysql","start"]
+#ENTRYPOINT ["/etc/init.d/mysqld","start"]
 
-USER mysql
+#VOLUME /etc/mysql /var/lib/mysql
+
+USER root
 
 EXPOSE 3366
