@@ -1,0 +1,14 @@
+{
+  "name": "website",
+  "version": "0.0.1",
+  "description": "Node.js on Docker",
+  "author": "qw4wer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express" : "^4.13.3",
+	"body-parser" : "^1.17.2"
+  }
+}
