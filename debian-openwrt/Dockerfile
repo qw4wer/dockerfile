@@ -1,5 +1,5 @@
 FROM debian:stretch-slim
-MAINTAINER qw4wer "qw5wer@gmail.com"
+LABEL MAINTAINER qw4wer "qw5wer@gmail.com"
 
 WORKDIR /tmp
 
