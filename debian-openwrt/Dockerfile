@@ -1,4 +1,4 @@
-FROM ubuntu:last
+FROM debian:latest
 LABEL MAINTAINER qw4wer "qw5wer@gmail.com"
 
 WORKDIR /tmp
