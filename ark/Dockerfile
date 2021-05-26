@@ -14,11 +14,11 @@ RUN ./home/steam/steamcmd/steamcmd.sh +login anonymous \
 		echo '@ShutdownOnFailedCommand 1'; \
 		echo '@NoPromptForPassword 1'; \
 		echo 'login anonymous'; \
-		echo 'force_install_dir /home/steam/csgo-dedicated/'; \
-		echo 'app_update 740'; \
+		echo 'force_install_dir /home/steam/ark-server/'; \
+		echo 'app_update force_install_dir'; \
 		echo 'quit'; \
-} > /home/steam/csgo-dedicated/csgo_update.txt && \
-cd /home/steam/csgo-dedicated/csgo && \ 
+} > /home/steam/ark-server/ark_update.txt && \
+cd /home/steam/ark-server/csgo && \ 
     curl https://raw.githubusercontent.com/CM2Walki/CSGO/master/etc/cfg.tar.gz -o cfg.tar.gz && \
     tar -xf cfg.tar.gz && rm cfg.tar.gz
 
