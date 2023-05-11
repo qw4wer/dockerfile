@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file golang-mipsle-build-environment/Dockerfile --tag golang-mipsle-build-environment:$(date +%s)
+      run: cd golang-mipsle-build-environment && docker build . --file Dockerfile --tag golang-mipsle-build-environment:$(date +%s)
