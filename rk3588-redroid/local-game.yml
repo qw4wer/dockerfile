@@ -6,13 +6,11 @@ services:
     privileged: true
     volumes:
       - /data/docker-data/local-game:/data
+      - /dev/mali0:/dev/mali0
     ports:
       - "5566:5555"
     command:
       - androidboot.redroid_gpu_mode=mali
       - androidboot.redroid_virtual_wifi=0
-
-    devices:
-      - /dev/mali0:/dev/mali0
     tty: true
     stdin_open: true
