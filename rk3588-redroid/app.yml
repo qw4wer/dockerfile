@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  app:
+    image: iceblacktea/redroid-arm64:12.0.0-240328
+    container_name: app
+    privileged: true
+    volumes:
+      - /data/docker-data/app:/data
+      - /dev/mali0:/dev/mali0
+    ports:
+      - "5567:5555"
+    command:
+      - androidboot.redroid_gpu_mode=mali
+      - androidboot.redroid_virtual_wifi=0
+      - androidboot.redroid_net_dns1=192.168.0.225
+      - androidboot.redroid_net_ndns=1
+    tty: true
+    stdin_open: true
