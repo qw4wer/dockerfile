@@ -6,13 +6,13 @@ services:
     privileged: true
     volumes:
       - /data/docker-data/gapps-game:/data
+      - /dev/mali0:/dev/mali0
     ports:
       - "5567:5555"
     command:
       - androidboot.redroid_gpu_mode=mali
       - androidboot.redroid_virtual_wifi=0
-
-    devices:
-      - /dev/mali0:/dev/mali0
+      - androidboot.redroid_net_dns1=192.168.0.225
+      - androidboot.redroid_net_ndns=1
     tty: true
     stdin_open: true
