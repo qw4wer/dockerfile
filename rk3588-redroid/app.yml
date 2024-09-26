@@ -2,13 +2,13 @@ version: "3.8"
 services:
   app:
     image: iceblacktea/redroid-arm64:12.0.0-240328
-    container_name: gapps-game
+    container_name: app
     privileged: true
     volumes:
-      - /data/docker-data/gapps-game:/data
+      - /data/docker-data/app:/data
       - /dev/mali0:/dev/mali0
     ports:
-      - "5567:5555"
+      - "5568:5555"
     command:
       - androidboot.redroid_gpu_mode=mali
       - androidboot.redroid_virtual_wifi=0
