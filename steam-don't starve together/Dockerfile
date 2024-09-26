@@ -1,5 +1,5 @@
 FROM steam-centos 
-MAINTAINER qw4wer "qw5wer@gmail.com"
+LABEL MAINTAINER="qw5wer@gmail.com"
 
 WORKDIR /home/steam/steamcmd 
 

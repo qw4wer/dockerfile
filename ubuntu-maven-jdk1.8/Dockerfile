@@ -1,5 +1,5 @@
 FROM java1.8 
-MAINTAINER qw4wer "qw5wer@gmail.com"
+LABEL MAINTAINER="qw5wer@gmail.com"
 
 ARG MAVEN_VERSION=3.5.0
 ARG USER_HOME_DIR="/root"

@@ -1,5 +1,5 @@
 FROM ubuntu 
-MAINTAINER qw4wer "qw5wer@gmail.com"
+LABEL MAINTAINER="qw5wer@gmail.com"
 
 ARG has_accept=yes
 

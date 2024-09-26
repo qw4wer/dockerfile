@@ -1,5 +1,5 @@
 FROM centos:centos6
-MAINTAINER qw4wer "qw5wer@gmail.com"
+LABEL MAINTAINER="qw5wer@gmail.com"
 
 WORKDIR /tmp
 

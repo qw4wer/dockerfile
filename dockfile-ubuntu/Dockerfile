@@ -1,5 +1,5 @@
 FROM ubuntu 
-MAINTAINER qw4wer "qw5wer@gmail.com"
+LABEL MAINTAINER="qw5wer@gmail.com"
 
 ARG jdk_version=8u73 
 ARG	jdk_b=02 

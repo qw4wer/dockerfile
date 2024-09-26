@@ -1,5 +1,5 @@
 FROM centos
-MAINTAINER qw4wer "qw5wer@gmail.com"
+LABEL MAINTAINER="qw5wer@gmail.com"
 
 ARG busybox=http://busybox.net/downloads/busybox-1.21.0.tar.bz2
 

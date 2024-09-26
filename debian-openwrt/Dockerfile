@@ -1,5 +1,5 @@
 FROM debian:latest
-LABEL MAINTAINER qw4wer "qw5wer@gmail.com"
+LABEL LABEL MAINTAINER="qw5wer@gmail.com"
 
 WORKDIR /tmp
 

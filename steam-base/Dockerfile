@@ -1,5 +1,5 @@
 FROM centos:centos6
-MAINTAINER qw4wer "qw5wer@gmail.com"
+LABEL MAINTAINER="qw5wer@gmail.com"
 
 
 RUN yum  -y install wget glibc.i686 libstdc++.i686 --setopt=protected_multilib=false  && yum clean all
