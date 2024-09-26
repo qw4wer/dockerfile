@@ -8,7 +8,7 @@ services:
     restart: always
   subweb:
     image: qw4wer/subweb:latest
-    container_name: subconverter
+    container_name: subweb
     ports:
       - "18080:80"
     restart: always
