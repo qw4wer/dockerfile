@@ -1,0 +1,17 @@
+version: "3"
+services:
+  subconverter:
+    image: tindy2013/subconverter:latest
+    container_name: subconverter
+    ports:
+      - "18500:25500"
+    restart: always
+  subweb:
+    image: qw4wer/subweb:latest
+    container_name: subconverter
+    ports:
+      - "18080:80"
+    restart: always
+networks:
+  my:
+    external: true
