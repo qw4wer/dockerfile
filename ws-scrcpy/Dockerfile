@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:18
 
 LABEL MAINTAINER="qw5wer@gmail.com"
 
@@ -9,8 +9,7 @@ RUN npm install -g node-gyp
 RUN apt update;apt install android-tools-adb -y
 RUN git clone https://github.com/NetrisTV/ws-scrcpy.git .
 RUN npm install
-RUN npm run dist
 
 EXPOSE 18000
 
-CMD ["node","dist/index.js"]
+CMD ["npm","start"]
