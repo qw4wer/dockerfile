@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  hermes-agent:
+    image: nousresearch/hermes-agent:latest
+    container_name: hermes-agent
+    command: gateway run
+    ports:
+      - "8645:8645"               
+    volumes:
+      - /data/docker-data/hermes:/opt/data 
+      - /data/docker-data/hermes-workspace:/hermes-workspace  
+    environment:
+      - HERMES_HOME=/opt/data    
+    restart: unless-stopped
+
+  hermes-webui:
+    image: ekkoye8888/hermes-web-ui:latest
+    container_name: hermes-webui
+    ports:
+      - "6060:6060"               
+    depends_on:
+      - hermes-agent
+    volumes:
+
+      - /data/docker-data/hermes:/home/hermeswebui/.hermes
+      - /data/docker-data/hermes-workspace:/hermes-workspace
+      - /data/docker-data/hermes-webui:/app/dist/data
+    environment:
+      - PORT=6060
+      - UPSTREAM=http://hermes-agent:8645   
+      - HERMES_HOME=/home/hermeswebui/.hermes  
+    restart: unless-stopped
