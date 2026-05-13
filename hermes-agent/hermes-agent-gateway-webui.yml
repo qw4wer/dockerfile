@@ -30,4 +30,5 @@ services:
       - PORT=6060
       - UPSTREAM=http://hermes-agent:8645   
       - HERMES_HOME=/home/hermeswebui/.hermes  
+      - HERMES_BIN=/opt/hermes/.venv/bin/hermes
     restart: unless-stopped
