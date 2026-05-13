@@ -28,7 +28,7 @@ services:
       - /data/docker-data/hermes-webui:/app/dist/data
     environment:
       - PORT=6060
-      - UPSTREAM=http://hermes-agent:8645   
+      - UPSTREAM=http://hermes-agent:8642   
       - HERMES_HOME=/home/hermeswebui/.hermes  
       - HERMES_BIN=/opt/hermes/.venv/bin/hermes
     restart: unless-stopped
