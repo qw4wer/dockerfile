@@ -12,6 +12,7 @@ services:
       - /data/docker-data/hermes-workspace:/hermes-workspace  
     environment:
       - HERMES_HOME=/opt/data    
+      - API_SERVER_HOST=0.0.0.0
     restart: unless-stopped
 
   hermes-webui:
