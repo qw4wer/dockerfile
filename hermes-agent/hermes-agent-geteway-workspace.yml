@@ -2,6 +2,7 @@ services:
   hermes-agent:
     image: nousresearch/hermes-agent:latest
     restart: unless-stopped
+    user: "10000:10000"
     container_name: hermes-agent
     command: gateway run 
     ports:
@@ -18,6 +19,7 @@ services:
   hermes-workspace:
     image: ghcr.io/outsourc-e/hermes-workspace:latest
     restart: unless-stopped
+    user: "10000:10000"
     environment:
       HERMES_HOME: /home/workspace/.hermes
       HERMES_WORKSPACE_DIR: /workspace
