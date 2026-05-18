@@ -1,0 +1,19 @@
+services:
+  hermes-agent-gateway-dashboard:
+    image: nousresearch/hermes-agent:latest
+    restart: unless-stopped
+    user: "10000:10000"
+    container_name: hermes-agent
+    command: gateway run 
+    ports:
+      - "8645:8645"  
+      - "8642:8642"   
+      - "9119:9119"         
+    volumes:
+      - /data/docker-data/hermes:/opt/data 
+      - /data/docker-data/hermes-workspace:/hermes-workspace  
+    environment:
+      HERMES_HOME: /opt/data
+      HERMES_DASHBOARD: 1
+      HERMES_DASHBOARD_HOST: 0.0.0.0
+      HERMES_DASHBOARD_PORT: "9119"
