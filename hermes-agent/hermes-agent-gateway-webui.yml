@@ -4,7 +4,6 @@ services:
   hermes-agent:
     image: nousresearch/hermes-agent:latest
     container_name: hermes-agent
-    user: "10000:10000"
     command: gateway run
     restart: unless-stopped
     ports:
@@ -26,7 +25,6 @@ services:
   hermes-webui:
     image: ghcr.io/nesquena/hermes-webui:latest
     container_name: hermes-webui
-    user: "10000:10000"
     restart: unless-stopped
     ports:
       - "8787:8787"   
@@ -44,6 +42,8 @@ services:
       - HERMES_BIN=/opt/hermes/.venv/bin/hermes
       - HERMES_HOME=/home/hermeswebui/.hermes
       - HERMES_API_TOKEN=16ff487cb10fa27e70750939a976df5514550238
+      - HERMES_WEBUI_HOST=0.0.0.0
+      - HERMES_WEBUI_PORT=8787
 
 
 # 创建一个匿名卷来存放 hermes 的虚拟环境，确保 webui 能访问到所有 Python 依赖
