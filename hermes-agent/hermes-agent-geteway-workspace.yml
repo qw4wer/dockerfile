@@ -6,8 +6,9 @@ services:
     container_name: hermes-agent
     command: gateway run 
     ports:
-      - '8645:8645'  
-      - '8642:8642'            
+      - "8645:8645"  
+      - "8642:8642"   
+      - "9119:9119"         
     volumes:
       - /data/docker-data/hermes:/opt/data 
       - /data/docker-data/hermes-workspace:/hermes-workspace  
@@ -15,7 +16,7 @@ services:
       HERMES_HOME: /opt/data
       HERMES_DASHBOARD: 1
       HERMES_DASHBOARD_HOST: 0.0.0.0
-      HERMES_DASHBOARD_PORT: '9119'
+      HERMES_DASHBOARD_PORT: "9119"
 
   hermes-workspace:
     image: ghcr.io/outsourc-e/hermes-workspace:latest
@@ -31,11 +32,10 @@ services:
 
       HERMES_PASSWORD: ${HERMES_PASSWORD:-${CLAUDE_PASSWORD:-}}
 
-      COOKIE_SECURE: ${COOKIE_SECURE:-}
-
-      TRUST_PROXY: ${TRUST_PROXY:-}
+      COOKIE_SECURE: "0"
+      TRUST_PROXY: false
     volumes:
       - /data/docker-data/hermes:/home/workspace/.hermes
       - /data/docker-data/hermes-workspace:/workspace
     ports:
-      - '23000:3000'
+      - "23000:3000"
