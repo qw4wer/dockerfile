@@ -44,6 +44,7 @@ services:
       - HERMES_API_TOKEN=16ff487cb10fa27e70750939a976df5514550238
       - HERMES_WEBUI_HOST=0.0.0.0
       - HERMES_WEBUI_PORT=8787
+      - HERMES_WEBUI_STATE_DIR=/home/hermeswebui/.hermes/webui
 
 
 # 创建一个匿名卷来存放 hermes 的虚拟环境，确保 webui 能访问到所有 Python 依赖
