@@ -19,7 +19,7 @@ services:
     image: ghcr.io/outsourc-e/hermes-workspace:latest
     restart: unless-stopped
     env_file:
-      - /data/docker-data/hermes/.env
+      - /home/workspace/.hermes/.env
     environment:
       HERMES_HOME: /home/workspace/.hermes
       HERMES_WORKSPACE_DIR: /workspace
