@@ -1,0 +1,10 @@
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    ports:
+      - "23000:8080"
+    volumes:
+      - /data/docker-data/open-webui:/app/backend/data
+    environment:
+      - OPENAI_API_BASE_URL=http://192.168.31.110:8642/v1
+    restart: unless-stopped

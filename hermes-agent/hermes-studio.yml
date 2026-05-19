@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  hermes-studio:
+    image: ekkoye8888/hermes-web-ui:latest
+    container_name: hermes-studio
+    ports:
+      - "6060:6060"
+    volumes:
+      - /data/docker-data/hermes-studio:/home/agent/.hermes
+    environment:
+      - PORT=6060
+      - BIND_HOST=0.0.0.0
+    restart: unless-stopped
