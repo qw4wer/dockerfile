@@ -1,6 +1,6 @@
 services:
   n8n:
-    image: n8nio/n8n:latest
+    image: blowsnow/n8n-chinese:latest
     restart: unless-stopped
     container_name: n8n
     ports:
@@ -8,8 +8,11 @@ services:
     environment:
       - N8N_SECURE_COOKIE=false  # 若通过 HTTP 访问需要设置
       - N8N_DEFAULT_LOCALE=zh-CN # 设置界面语言为中文（可选）
-      - N8N_SECURE_COOKIE=false
       - TZ=Asia/Shanghai
+      - GENERIC_TIMEZONE=Asia/Shanghai
+      - N8N_HOST=${N8N_HOST}
+      - N8N_WEBHOOK_URL=${N8N_WEBHOOK_URL}
+      - N8N_PROXY_HOPS=1
     volumes:
       - /data/docker-data/casaos/n8n:/home/node/.n8n
 
